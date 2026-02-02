@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - Sweet Crumbs</title>
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-stripes">
+      <div class="header-content">
+        <div class="logo">
+            <img src="../public/img/logo_p.png" alt="Sweet Crumbs">
+        </div>
+        <nav class="nav-wrapper">
+          <ul class="nav-menu">
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="nosotros.html" class="active">Nosotros</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="scalloped-border"></div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="page-section">
+      <h1>Nuestra Dulce Historia</h1>
+      <p class="page-slogan">Donde cada postre cuenta una historia de pasión y sabor.</p>
+
+      <!-- STORY SECTION -->
+      <div class="story-box">
+        <div class="story-content">
+          <h2>Hecho con amor</h2>
+          <div class="story-inner">
+            <div class="story-image-box">
+              <img src="../public/img/carrusel2.jpg" alt="Nuestra pasión">
+            </div>
+            <div class="story-text-box">
+              <p>Sweet Crumbs nació de un sueño elaborado por amigos para compartir la alegría a través de la repostería. Cada receta ha sido perfeccionada con el tiempo, usando solo ingredientes de la más alta calidad y un toque de amor.</p>
+              <p>Creemos que un buen postre puede alegrar el día, celebrar momentos especiales y crear recuerdos inolvidables. Te invitamos a nuestro rincón dulce para que disfrutes de una experiencia única.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHILOSOPHY SECTION -->
+      <section class="philosophy-section">
+        <h2>Filosofía</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-card-image">
+              <img src="../public/img/carrusel4.avif" alt="Pasión">
+            </div>
+            <div class="philosophy-card-content">
+              <h3>Pasión</h3>
+              <p>Cada postre es elaborado con amor y dedicación.</p>
+            </div>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-card-image">
+              <img src="../public/img/carrusel3.avif" alt="Ingredientes">
+            </div>
+            <div class="philosophy-card-content">
+              <h3>Ingredientes</h3>
+              <p>Seleccionamos cuidadosamente los mejores ingredientes frescos y de calidad.</p>
+            </div>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-card-image">
+              <img src="../public/img/carrusel4.avif" alt="Creatividad">
+            </div>
+            <div class="philosophy-card-content">
+              <h3>Creatividad</h3>
+              <p>Creamos postres personalizados que sorprendan en cada momento especial.</p>
+            </div>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-card-image">
+              <img src="../public/img/carrusel3.avif" alt="Compromiso">
+            </div>
+            <div class="philosophy-card-content">
+              <h3>Compromiso</h3>
+              <p>Garantizamos que cada experiencia sea única y memorable.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ACCESSIBILITY BUTTON -->
+  <button class="accessibility-btn" title="Botón de Accesibilidad"><img src="../public/img/PurinBerry (1).png" alt="accesibilidad"></button>
+
+  <!-- ACCESSIBILITY MODAL -->
+  <div id="accessibilityModal" class="accessibility-modal">
+    <div class="accessibility-modal-content">
+      <!-- Modal Header -->
+      <div class="accessibility-modal-header">
+        <h2>Accesibilidad</h2>
+        <button class="accessibility-close-btn" aria-label="Cerrar">×</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="accessibility-modal-body">
+        <!-- Font Size Section -->
+        <div class="accessibility-section">
+          <label class="accessibility-label">📏 Tamaño de letra</label>
+          <div class="font-size-container">
+            <button class="font-control-btn font-decrease" aria-label="Disminuir tamaño">−</button>
+            <input type="range" id="fontSizeRange" class="font-size-slider" min="80" max="150" value="100" aria-label="Tamaño de letra">
+            <span class="font-size-display">100%</span>
+            <button class="font-control-btn font-increase" aria-label="Aumentar tamaño">+</button>
+          </div>
+          <button class="accessibility-reset-btn font-size-reset">Restablecer</button>
+        </div>
+
+        <!-- Font Type Section -->
+        <div class="accessibility-section">
+          <label class="accessibility-label">🔤 Tipo de letra</label>
+          <div class="font-type-container">
+            <button class="font-type-btn concertone-btn active" data-font="concertone">Estándar</button>
+            <button class="font-type-btn serif-btn" data-font="serif">Serif</button>
+            <button class="font-type-btn sans-serif-btn" data-font="sans-serif">Sans Serif</button>
+          </div>
+          <button class="accessibility-reset-btn font-type-reset">Restablecer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <!-- Columna 1: Logo y Tagline -->
+      <div class="footer-section footer-logo-section">
+        <div class="footer-logo">
+            <img src="../public/img/logo_p.png" alt="Sweet Crumbs">
+        </div>
+        <p>Endulzando tus momentos más especiales.</p>
+      </div>
+      
+      <!-- Columna 2: Horarios y Redes -->
+      <div class="footer-section footer-hours-section">
+        <h3>Horarios:</h3>
+        <p><strong>Lunes a Sábados:</strong> 12h30 a 21h30<br><strong>Domingos:</strong> 12h30 a 17h30</p>
+        
+        <h3 style="margin-top: 20px;">Síguenos:</h3>
+        <p><a href="http://instagram.com">Instagram</a> | 
+          <a href="http://facebook.com">Facebook</a> | 
+          <a href="http://tiktok.com">TikTok</a></p>
+      </div>
+      
+      <!-- Columna 3: Contacto y Reservas -->
+      <!-- Columna 3: Contacto y Reservas -->
+      <div class="footer-section footer-contact-section">
+        <button class="btn-footer">Reservas</button>
+        <div class="contact-item ">
+          <img class="logo_foot" src="../public/img/16.png" alt="wats"><p>+593 978933926</p>
+        </div>
+        <div class="contact-item ">
+          <img class="logo_foot" src="../public/img/17.png" alt="mail"><p>sweetcrumbs@gmail.com</p>
+        </div>
+        <div class="contact-item ">
+          <img class="logo_ubi" src="../public/img/ubicacion.png" alt="ubi"><p>Av. Principal 123, Quito - Ecuador</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Copyright Section -->
+    <div class="footer-bottom">
+      <p>Sweet Crumbs © 2025</p>
+    </div>
+  </footer>
+
+  <script src="../public/js/main.js"></script>
+  <script src="../public/js/accessibility.js"></script>
+</body>
+</html>
