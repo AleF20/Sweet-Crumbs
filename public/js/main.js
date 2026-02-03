@@ -74,7 +74,7 @@ function showStep(step) {
   }
   // Update step indicator and titles
   const stepNumber = document.getElementById('stepNumber');
-  const modalTitle = document.querySelector('.modal-header-title h2');
+  const modalTitle = document.querySelector('.modal-header-title p');
   if (stepNumber) {
     stepNumber.textContent = step;
   }
@@ -315,7 +315,7 @@ function generateSummary() {
   const formattedDate = date.toLocaleDateString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   
   const summaryContent = document.getElementById('summaryContent');
-  summaryContent.innerHTML = `
+  /*summaryContent.innerHTML = `
     <div class="summary-item">
       <strong>Nombre:</strong> <span>${firstName} ${lastName}</span>
     </div>
@@ -340,7 +340,42 @@ function generateSummary() {
     <div class="summary-item">
       <strong>Fecha:</strong> <span>${formattedDate}</span>
     </div>
+  `;*/
+  summaryContent.innerHTML = `
+    <div class="summary-card">
+      
+      <div class="summary-grid">
+
+        <div class="summary-field">
+          <h4>Nombre Cliente:</h4>
+          <p>${firstName} ${lastName}</p>
+        </div>
+
+        <div class="summary-field">
+          <h4>Cédula Cliente:</h4>
+          <p>${cedula}</p>
+        </div>
+
+        <div class="summary-field">
+          <h4>N° Personas:</h4>
+          <p>${people}</p>
+        </div>
+
+        <div class="summary-field">
+          <h4>Teléfono:</h4>
+          <p>${phone}</p>
+        </div>
+
+        <div class="summary-field summary-full">
+          <h4>Fecha y Hora:</h4>
+          <p>${time} — ${formattedDate}</p>
+        </div>
+
+      </div>
+
+    </div>
   `;
+
 }
 
 // Reset form

@@ -246,7 +246,7 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 15px;
-  display: block;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -896,7 +896,7 @@ footer {
 .reservations-hero {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 510px;
   margin-top: -8px;
   display: flex;
   align-items: center;
@@ -1363,31 +1363,62 @@ footer {
 }
 
 /* Summary Step */
-.summary-item {
-  background-color: var(--gray-light);
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  border-left: 4px solid var(--brown-dark);
+.summary-card {
+  background: transparent;
+  padding: 0;
 }
 
-.summary-item strong {
-  color: var(--brown-dark);
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+.summary-field {
+  border: none;
+  padding: 0;
 }
 
-.summary-item span {
-  color: var(--brown-light);
+.summary-field h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--brown-medium-dark);
+  margin-bottom: 2px;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+
+.summary-field p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4;}
+
+.summary-full {
+  grid-column: 1 / -1;
 }
 
 /* Terms Checkbox */
 .terms-checkbox {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  margin: 20px 0;
-  padding: 15px;
-  background-color: var(--gray-light);
-  border-radius: 8px;
+  gap: 10px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+}
+
+.terms-checkbox label {
+  color: black;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+
+.terms-checkbox a {
+  color: black;
+  font-weight: 300;
+  text-decoration: underline;
+  letter-spacing: 0.3px;
 }
 
 .terms-checkbox input[type="checkbox"] {
@@ -1396,14 +1427,9 @@ footer {
   margin-top: 2px;
   cursor: pointer;
   accent-color: var(--brown-dark);
+  color: #000;
 }
 
-.terms-checkbox label {
-  margin: 0;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: var(--brown-light);
-}
 
 /* Modal Buttons */
 .modal-buttons {
@@ -1625,40 +1651,26 @@ footer {
   }
 
   .images-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
   }
 
-  .item-large-1 {
-    grid-column: 1 / 2;
-    grid-row: auto;
-  }
-
-  .item-medium-1 {
-    grid-column: 2 / 3;
-    grid-row: auto;
-  }
-
-  .item-medium-2 {
-    grid-column: 1 / 2;
-    grid-row: auto;
-  }
-
-  .item-large-2 {
-    grid-column: 2 / 3;
-    grid-row: auto;
+  .item-large-1,
+  .item-medium-1,
+  .item-medium-2,
+  .item-large-2,
+  .item-small {
+    grid-column: 1 / -1;
+    height: auto;
   }
 
   .item-small {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    height: 150px;
+    height: 180px;
   }
 
   .products-grid {
     grid-template-columns: 1fr;
   }
-
+  
   .footer-container {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1777,11 +1789,14 @@ footer {
 
   .elegant-text-section h2 {
     font-size: 1.3rem;
+    text-align: center;
+    padding-left: 0;
   }
 
   .elegant-text-section h2::before,
   .elegant-text-section h2::after {
     display: none;
+    text-align: center;
   }
 
   .products-section h2,
@@ -1802,6 +1817,42 @@ footer {
   .modal-body h3 {
     font-size: 1.2rem;
   }
+  .flatpickr-calendar.inline {
+    width: 100%;              /* ocupa todo el ancho */
+    margin: 0;                /* sin márgenes laterales */
+    border-radius: 10px;      /* esquinas más pequeñas */
+    box-shadow: none;         /* quitar sombra para simplificar */
+  }
+
+  .flatpickr-prev-month,
+  .flatpickr-next-month {
+    width: 26px;              /* botones aún más pequeños */
+    height: 26px;
+    border: 1px solid var(--brown-medium-dark);
+  }
+
+  .flatpickr-prev-month svg,
+  .flatpickr-next-month svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .flatpickr-current-month {
+    padding: 2px 4px;         /* menos espacio interno */
+    font-size: 0.8rem;        /* texto más pequeño */
+    gap: 3px;
+    box-shadow: none;         /* quitar sombra */
+  }
+
+  .flatpickr-weekday {
+    font-size: 0.6rem;        /* reducir tamaño de los días */
+  }
+
+  .flatpickr-day {
+    font-size: 0.7rem;        /* números más pequeños */
+    padding: 2px;             /* menos espacio interno */
+  }
+
 }
 
 /* ============================= */
@@ -2082,5 +2133,51 @@ footer {
   .font-type-btn {
     flex: 1;
     min-width: 80px;
+  }
+}
+
+/* ============================= */
+/*     AJUSTE DEL CALENDARIO     */    
+/* ============================= */
+@media (min-width: 481px) and (max-width: 768px) {
+  .flatpickr-calendar.inline {
+    max-width: 360px;
+  }
+
+  .flatpickr-day {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 480px) {
+  .flatpickr-calendar.inline {
+    width: 100%;
+    max-width: 320px;
+    margin: 10px auto;
+    border-radius: 14px;
+  }
+
+  .flatpickr-current-month {
+    padding: 4px 6px;
+    font-size: 0.8rem;
+    gap: 4px;
+  }
+
+  .flatpickr-prev-month,
+  .flatpickr-next-month {
+    width: 32px;
+    height: 32px;
+  }
+
+  .flatpickr-weekday {
+    font-size: 0.65rem;
+  }
+
+  .flatpickr-day {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 0.8rem;
   }
 }
