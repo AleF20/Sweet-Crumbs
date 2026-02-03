@@ -379,6 +379,7 @@ footer {
   align-items: flex-end;
   justify-content: center;
   color: var(--white);
+  -webkit-text-stroke: 0.2px var(--brown-dark);
   font-size: 1.5rem;
   font-weight: bold;
   position: relative;
