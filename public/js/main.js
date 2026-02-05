@@ -74,8 +74,8 @@ function closeReservationModal() {
   if (hasData) {
     // Show confirmation dialog
     showConfirmationDialog(
-      '¿Seguro desea cerrar la página?',
-      '¿Estás seguro de que quieres cerrar? Se cancelará tu reserva y se perderán todos los datos ingresados.',
+      'Seguro desea cerrar la página?',
+      'Estás seguro de que quieres cerrar? Se cancelará tu reserva y se perderán todos los datos ingresados.',
       () => {
         // User clicked "Sí"
         if (modal) {
