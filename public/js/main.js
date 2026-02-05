@@ -374,8 +374,9 @@ function validateStep(step) {
 
 // Email validation
 function isValidEmail(email) {
-  // Usuario: letras, números y puntos, pero no termina en punto
-  const emailRegex = /^[a-zA-Z0-9.]+[a-zA-Z0-9]@[^\s@]+\.[^\s@]+$/;
+  // Usuario: letras, números, puntos, guiones medios y bajos
+  // No permite: guiones/puntos al inicio o final, ni dos seguidos
+  const emailRegex = /^(?!.*[._-]{2})[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 

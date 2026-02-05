@@ -190,6 +190,46 @@
     </div>
   </div>
 
+  <!-- ACCESSIBILITY BUTTON -->
+  <button class="accessibility-btn" title="Botón de Accesibilidad"><img src="../public/img/PurinBerry (1).png" alt="accesibilidad"></button>
+
+  <!-- ACCESSIBILITY MODAL -->
+  <div id="accessibilityModal" class="accessibility-modal">
+    <div class="accessibility-modal-content">
+      <!-- Modal Header -->
+      <div class="accessibility-modal-header">
+        <h2>Accesibilidad</h2>
+        <button class="accessibility-close-btn" aria-label="Cerrar">×</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="accessibility-modal-body">
+        <!-- Font Size Section -->
+        <div class="accessibility-section">
+          <label class="accessibility-label">📏 Tamaño de letra</label>
+          <div class="font-size-container">
+            <button class="font-control-btn font-decrease" aria-label="Disminuir tamaño">−</button>
+            <input type="range" id="fontSizeRange" class="font-size-slider" min="80" max="150" value="100" aria-label="Tamaño de letra">
+            <span class="font-size-display">100%</span>
+            <button class="font-control-btn font-increase" aria-label="Aumentar tamaño">+</button>
+          </div>
+          <button class="accessibility-reset-btn font-size-reset">Restablecer</button>
+        </div>
+
+        <!-- Font Type Section -->
+        <div class="accessibility-section">
+          <label class="accessibility-label">🔤 Tipo de letra</label>
+          <div class="font-type-container">
+            <button class="font-type-btn concertone-btn active" data-font="concertone">Estándar</button>
+            <button class="font-type-btn serif-btn" data-font="serif">Serif</button>
+            <button class="font-type-btn sans-serif-btn" data-font="sans-serif">Sans Serif</button>
+          </div>
+          <button class="accessibility-reset-btn font-type-reset">Restablecer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
@@ -245,6 +285,7 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="../public/js/main.js"></script>
+  <script src="../public/js/accessibility.js"></script>
   <script>
     function limpiarSoloLetras(input) {
       // Reemplaza todo lo que no sea letras (incluye acentos y ñ)
