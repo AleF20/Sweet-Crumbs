@@ -477,7 +477,11 @@ function submitReservation() {
   );
 
   setTimeout(() => {
-    closeReservationModal();
+    const modal = document.getElementById('reservationModal');
+    if (modal) {
+      modal.classList.remove('show');
+      resetForm();
+    }
   }, 300);
 }
 
