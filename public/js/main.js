@@ -58,9 +58,41 @@ function openReservationModal() {
 // Close Modal
 function closeReservationModal() {
   const modal = document.getElementById('reservationModal');
-  if (modal) {
-    modal.classList.remove('show');
-    resetForm();
+  const form = document.getElementById('reservationForm');
+  
+  // Check if form has any data filled
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const cedula = document.getElementById('cedula').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const time = document.getElementById('time').value;
+  const date = document.getElementById('date').value;
+  
+  const hasData = firstName || lastName || cedula || phone || email || time || date;
+  
+  if (hasData) {
+    // Show confirmation dialog
+    showConfirmationDialog(
+      '¿Seguro desea cerrar la página?',
+      '¿Estás seguro de que quieres cerrar? Se cancelará tu reserva y se perderán todos los datos ingresados.',
+      () => {
+        // User clicked "Sí"
+        if (modal) {
+          modal.classList.remove('show');
+          resetForm();
+        }
+      },
+      () => {
+        // User clicked "No" - do nothing, dialog closes
+      }
+    );
+  } else {
+    // No data filled, just close the modal
+    if (modal) {
+      modal.classList.remove('show');
+      resetForm();
+    }
   }
 }
 // Show specific step
@@ -122,6 +154,51 @@ function previousStep() {
     currentStep--;
     showStep(currentStep);
   }
+}
+
+// Confirmation Dialog
+function showConfirmationDialog(title, message, onConfirm, onCancel) {
+  const existingDialog = document.getElementById('confirmationModal');
+  if (existingDialog) {
+    existingDialog.remove();
+  }
+
+  const modal = document.createElement('div');
+  modal.id = 'confirmationModal';
+  modal.className = 'confirmation-modal';
+  modal.innerHTML = `
+    <div class="confirmation-modal-content">
+      <h3>${title}</h3>
+      <p>${message}</p>
+      <div class="confirmation-buttons">
+        <button class="btn-confirm btn-no" id="btnNo">No</button>
+        <button class="btn-confirm btn-yes" id="btnYes">Sí</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const btnYes = document.getElementById('btnYes');
+  const btnNo = document.getElementById('btnNo');
+
+  btnYes.addEventListener('click', () => {
+    modal.remove();
+    onConfirm();
+  });
+
+  btnNo.addEventListener('click', () => {
+    modal.remove();
+    if (onCancel) onCancel();
+  });
+
+  // Close on outside click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.remove();
+      if (onCancel) onCancel();
+    }
+  });
 }
 
 function showFormMessage(type, title, message,) {

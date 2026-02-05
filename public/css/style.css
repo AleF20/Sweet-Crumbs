@@ -2182,3 +2182,119 @@ footer {
     font-size: 0.8rem;
   }
 }
+
+/* ============================= */
+/*   CONFIRMATION DIALOG STYLES  */
+/* ============================= */
+
+.confirmation-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4000;
+  animation: fadeIn 0.2s ease;
+}
+
+.confirmation-modal-content {
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideIn 0.3s ease;
+  border: 4px solid var(--brown-dark);
+}
+
+.confirmation-modal-content h3 {
+  font-size: 1.8rem;
+  color: var(--brown-dark);
+  margin-bottom: 15px;
+  font-family: var(--font-family);
+  font-weight: 600;
+}
+
+.confirmation-modal-content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-confirm {
+  padding: 12px 40px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family);
+}
+
+.btn-no {
+  background-color: transparent;
+  color: var(--brown-dark);
+  border: 2px solid var(--brown-dark);
+}
+
+.btn-no:hover {
+  background-color: var(--brown-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(112, 41, 41, 0.3);
+}
+
+.btn-yes {
+  background-color: var(--brown-dark);
+  color: var(--white);
+  border: 2px solid var(--brown-dark);
+}
+
+.btn-yes:hover {
+  background-color: #8b3a3a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(112, 41, 41, 0.4);
+}
+
+.btn-confirm:active {
+  transform: scale(0.98);
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .confirmation-modal-content {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .confirmation-modal-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .confirmation-modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .confirmation-buttons {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn-confirm {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
